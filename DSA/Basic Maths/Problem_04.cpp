@@ -3,30 +3,41 @@ using namespace std;
 
 bool isPrime(int n) {
     if (n <= 1) return false;
-    for (int i = 2; i <= n / i; ++i) {
-        if (n % i == 0) 
-        return false;
+
+    for (int i = 2; i * i <= n; i++) {
+        if (n % i == 0)
+            return false;
     }
     return true;
 }
 
+
+void primeNo(int n){
+  int count = 0;
+  if(n <=1) {
+    cout << "number is not eligible"  << endl  0;
+    return;
+  }
+  for(int i= 2; i<=n; i++){
+    if(n%i == 0){
+      count++;
+    }
+  }
+    if(count == 2){
+      cout << "Number is prime" << endl;
+    }
+    else {
+      cout <<"Number is not prime" << endl;
+    }
+}
+
 int main() {
-    int n, count=0;
-    cout << "Enter the Number: ";
-    cin>>n;
-
-    
-    for (int i = 2; i <= n; i++) {
-        if (isPrime(i)){
-          cout<< i <<" ";
-            count++;
-          }  
-      }
-
-    cout << "\nTotal prime numbers = " << count;
-    return 0;
-
-    // bool isP = checkPrime(n);
-    // cout << n << (isP ? "is Prime" : "is Not Prime") << "\n";
-    return 0;
+     int n = 1;
+   primeNo(n);
+    if (isPrime(n))
+        cout << "Prime number";
+    else
+        cout << "Not a prime number";
+  return 0;
+      
 }

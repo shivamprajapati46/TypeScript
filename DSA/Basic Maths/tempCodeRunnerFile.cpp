@@ -1,1 +1,5 @@
-    bool isP = checkPrime(n);
+
+    if (isPrime(n))
+        cout << "Prime number";
+    else
+        cout << "Not a prime number";
